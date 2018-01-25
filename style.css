@@ -45,4 +45,22 @@ body {
 
 .controllers {
 	clear: both;
+	display: table;
+}
+
+.controllers * {
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.volume-silder {
+	width: 90px;
+	margin-left: 5px;
+}
+
+
+
+
+
+
 }
