@@ -3,8 +3,10 @@ body {
 }
 
 .audio-player-cont {
+	position: absolute;
+	position: center;
 	width: 450px;
-	height: 135px;
+	height: 145px;
 	background: #FFB6C1;
 	box-shadow: 0 0 6px 2px #c7a8a8;
 	color: #003ba9;

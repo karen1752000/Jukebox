@@ -19,6 +19,7 @@ function loadSong () {
     song.src = "songs/" + songs[currentSong];
     songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong];
     nextSongTitle.innerHTML = "<b>Next Song </b>" + songs[currentSong + 1 % songs.length];
+    song.playbackRate = 1;
     song.volume = volumeSlider.value;
     song.play();
     setTimeout(showDuration, 1000);
@@ -30,6 +31,9 @@ function updateSongSlider () {
 	var c = Math.round(song.currentTime);
 	songSlider.value = c;
 	currentTime.textContent = convertTime(c);
+	if(song.ended) {
+		next();
+	}
 }
 
 function convertTime (secs) {
@@ -47,6 +51,7 @@ function showDuration () {
 }
 
 function playOrPauseSong (img) {
+	 song.playbackRate = 1;
 	if(isOn){
 		console.log("In play");
 		song.play();
@@ -71,6 +76,24 @@ function previous () {
 	loadSong();
 
 }
+ function seekSong() {
+      song.currentTime = songSlider.value;
+      currentTime.text = convertTime(song.currentTime);
+ }
+
+ function adjustVolume () {
+ 	song.volume = volumeSlider.value;
+ }
+
+ function increasePlaybackRate () {
+ 	songs.playbackRate += 0.5;
+
+ }
+
+ function decreasePlaybackRate () {
+ 	songs.playbackRate -= 0.5;
+ }
+
 
 
 
