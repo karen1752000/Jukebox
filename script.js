@@ -11,6 +11,7 @@ var nextSongTitle = document.getElementById('nextSongTitle');
 
 var song = new Audio();
 var currentSong = 0;
+var isOn = true;
 
 window.onload = loadSong;
 
@@ -46,12 +47,16 @@ function showDuration () {
 }
 
 function playOrPauseSong (img) {
-	if(song.pause){
+	if(isOn){
+		console.log("In play");
 		song.play();
-		img.src = "circled-pause.png";
+		isOn = false;
+		document.getElementById("play").src = "circled-pause.png";
 	}else{
+		console.log("In pause");
 		song.pause();
-		img.src = "circled-play.png";
+		isOn = true;
+		document.getElementById("play").src = "circled-play.png";
 	}
 }
 
@@ -62,7 +67,7 @@ function next () {
 
 function previous () {
 	currentSong = currentSong - 1;
-	currentSong = (currentSong < 0) ? song.length - 1 : currentSong;
+	currentSong = (currentSong < 0) ? songs.length - 1 : currentSong;
 	loadSong();
 
 }
