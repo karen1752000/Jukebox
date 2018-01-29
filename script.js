@@ -18,7 +18,7 @@ window.onload = loadSong;
 function loadSong () {
     song.src = "songs/" + songs[currentSong];
     songTitle.textContent = (currentSong + 1) + ". " + songs[currentSong];
-    nextSongTitle.innerHTML = "<b>Next Song </b>" + songs[currentSong + 1 % songs.length];
+    nextSongTitle.innerHTML = "<b>Next Song </b>" + songs[currentSong +- 1 % songs.length];
     song.playbackRate = 1;
     song.volume = volumeSlider.value;
     song.play();

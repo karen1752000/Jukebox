@@ -4,8 +4,7 @@ body {
 
 .audio-player-cont {
 	position: absolute;
-	position: center;
-	width: 450px;
+	width: 404px;
 	height: 145px;
 	background: #FFB6C1;
 	box-shadow: 0 0 6px 2px #c7a8a8;
@@ -32,7 +31,7 @@ body {
 }
 
 .song-slider {
-	width: 300px;
+	width: 400px;
 }
 
 .current-time {
